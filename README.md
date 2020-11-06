@@ -1,8 +1,8 @@
-Custom layers for pydeck
+Tile layer for pydeck
 ========================
 
-This repo is an example of how to create a custom deck.gl layer for use in pydeck.
-
+Using custom layer in pydeck to handle Tile layer :
+based on [pydeck_custom_layer](https://github.com/ajduberstein/pydeck_custom_layer)
 
 ```python
 

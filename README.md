@@ -11,7 +11,7 @@ import pydeck
 pydeck.settings.custom_libraries = [
     {
         "libraryName": "MyTileLayerLibrary",
-        "resourceUri": "http://localhost:8888/files/bundle.js",
+        "resourceUri": "https://cdn.jsdelivr.net/gh/agressin/pydeck_myTileLayer@master/dist/bundle.js",
     }
 ]
 

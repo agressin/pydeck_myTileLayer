@@ -1,8 +1,7 @@
 Tile layer for pydeck
 ========================
 
-Using custom layer in pydeck to handle Tile layer :
-based on [pydeck_custom_layer](https://github.com/ajduberstein/pydeck_custom_layer)
+Using custom layer in pydeck to handle Tile layer ( based on [pydeck_custom_layer](https://github.com/ajduberstein/pydeck_custom_layer) )
 
 ```python
 

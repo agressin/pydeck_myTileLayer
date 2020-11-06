@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/deck.gl@^8.1.0/dist.min.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js"></script>
+    <style type="text/css">
+      body {margin: 0; padding: 0;}
+      #container {width: 100vw; height: 100vh;}
+    </style>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="./dist/bundle.js"></script>
+    </head>
+    <body>
+      <div id="container"></div>
+    </body>
+    <script>
+      const layer = new LabeledGeoJsonLayerLibrary.LabeledGeoJsonLayer({
+        id: `countries-${Date.now()}`,
+        data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
+        filled: false,
+        billboard: true,
+        getLineColor: [180, 180, 180],
+        getLabel: f => f.properties.name,
+        getLabelSize: f => 100000,
+        getLabelColor: [0, 64, 128],
+        labelSizeUnits: 'meters',
+        lineWidthMinPixels: 1
+      });
+
+      const deckgl = new deck.DeckGL({
+        mapboxApiAccessToken: '<your_token_here>',
+        container: 'container',
+        mapStyle: 'mapbox://styles/mapbox/light-v9',
+        initialViewState: {
+          longitude: -122.45,
+          latitude: 37.8,
+          zoom: 3,
+        },
+        controller: true
+      });
+
+      deckgl.setProps({layers: [layer]});
+    </script>
+</html>

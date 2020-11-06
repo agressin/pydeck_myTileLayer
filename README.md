@@ -5,16 +5,20 @@ This repo is an example of how to create a custom deck.gl layer for use in pydec
 
 
 ```python
-layer = pydeck.Layer(
-    'LabeledGeoJsonLayer'
-    data,
-    filled=False,
-    billboard=False,
-    get_line_color=[180, 180, 180],
-    get_label='f.properties.name',
-    get_label_size=20,
-    get_label_color=[0, 64, 128],
-    label_size_units='"meters"',
-    line_width_min_pixels=1
+
+import pydeck
+
+pydeck.settings.custom_libraries = [
+    {
+        "libraryName": "MyTileLayerLibrary",
+        "resourceUri": "http://localhost:8888/files/bundle.js",
+    }
+]
+
+DATA_URL = 'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
+
+custom_layer = pydeck.Layer(
+    "MyTileLayer",
+    DATA_URL
 )
 ```

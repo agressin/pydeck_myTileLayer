@@ -1,8 +1,8 @@
 /* global window, global */
-import { LabeledGeoJsonLayer } from "./labeled-geojson-layer";
+import { MyTileLayer } from "./my-tile-layer";
 
 const _global = typeof window === 'undefined' ? global : window;
-_global.LabeledGeoJsonLayerLibrary = {LabeledGeoJsonLayer};
+_global.MyTileLayerLibrary = {MyTileLayer};
 
-export default LabeledGeoJsonLayerLibrary;
+export default MyTileLayer;
 

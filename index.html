@@ -13,17 +13,8 @@
       <div id="container"></div>
     </body>
     <script>
-      const layer = new LabeledGeoJsonLayerLibrary.LabeledGeoJsonLayer({
-        id: `countries-${Date.now()}`,
-        data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
-        filled: false,
-        billboard: true,
-        getLineColor: [180, 180, 180],
-        getLabel: f => f.properties.name,
-        getLabelSize: f => 100000,
-        getLabelColor: [0, 64, 128],
-        labelSizeUnits: 'meters',
-        lineWidthMinPixels: 1
+      const layer = new MyTileLayerLibrary.MyTileLayer({
+        data: 'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
       });
 
       const deckgl = new deck.DeckGL({
@@ -31,9 +22,9 @@
         container: 'container',
         mapStyle: 'mapbox://styles/mapbox/light-v9',
         initialViewState: {
-          longitude: -122.45,
-          latitude: 37.8,
-          zoom: 3,
+          longitude: 6.6667,
+          latitude: 46.5333,
+          zoom: 5,
         },
         controller: true
       });
